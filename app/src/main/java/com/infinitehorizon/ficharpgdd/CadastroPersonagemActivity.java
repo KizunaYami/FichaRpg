@@ -1,4 +1,4 @@
-package com.example.projetorpg;
+package com.infinitehorizon.ficharpgdd;
 
 import androidx.appcompat.app.AppCompatActivity;
 

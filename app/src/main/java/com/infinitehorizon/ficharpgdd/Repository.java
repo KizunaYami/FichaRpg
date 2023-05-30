@@ -1,4 +1,4 @@
-package com.example.projetorpg;
+package com.infinitehorizon.ficharpgdd;
 
 import android.content.ContentValues;
 import android.content.Context;
