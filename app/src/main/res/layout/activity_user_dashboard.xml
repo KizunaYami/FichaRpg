@@ -4,14 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".UserDashboardActivity">
 
     <Button
-        android:id="@+id/idBtMainLog"
+        android:id="@+id/idBtDashCharacter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onClickDashboard"
-        android:text="DashBoard"
+        android:layout_marginBottom="100dp"
+        android:onClick="onClickCharacter"
+        android:text="Personagem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idBtDashCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:onClick="onClickCadastro"
+        android:text="Cadastrar Personagem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
