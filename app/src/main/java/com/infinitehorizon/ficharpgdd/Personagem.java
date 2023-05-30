@@ -1,4 +1,4 @@
-package com.example.projetorpg;
+package com.infinitehorizon.ficharpgdd;
 
 public class Personagem {
 
