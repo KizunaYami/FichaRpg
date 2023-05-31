@@ -1,6 +1,7 @@
 package com.infinitehorizon.ficharpgdd;
 
 public class Character {
+    private int id;
     private final String name;
     private final String CLASS;
     private final String race;
@@ -13,6 +14,7 @@ public class Character {
     private int intelligence;
     private int wisdom;
     private int charisma;
+    private int id_fk;
 
     public Character(String name, String CLASS, String race) {
         this.name = name;
@@ -27,6 +29,10 @@ public class Character {
         this.intelligence = 0;
         this.wisdom = 0;
         this.charisma = 0;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setLvl(int lvl) {
@@ -63,6 +69,14 @@ public class Character {
 
     public void setCharisma(int charisma) {
         this.charisma = charisma;
+    }
+
+    public void setId_fk(int id_fk) {
+        this.id_fk = id_fk;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -111,5 +125,9 @@ public class Character {
 
     public int getCharisma() {
         return charisma;
+    }
+
+    public int getId_fk() {
+        return id_fk;
     }
 }

@@ -2,36 +2,37 @@ package com.infinitehorizon.ficharpgdd;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class Repository extends SQLiteOpenHelper {
-
-
     private static final String NOME_DB = "db_rpg";
     private static final int VERSION = 1;
 
     public Repository(@Nullable Context context) {
         super(context, NOME_DB, null, VERSION);
+        getWritableDatabase();
     }
-  
-  @Override
+
+    @Override
     public void onOpen(SQLiteDatabase db) {
         super.onOpen(db);
-        if(!db.isReadOnly()){
+        if (!db.isReadOnly()) {
             db.execSQL("PRAGMA foreign_keys=ON;");
         }
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql_user = "CREATE TABLE Usuario(" +
+        String sql_user = "CREATE TABLE usuario(" +
                 "id INTEGER PRIMARY KEY," +
                 "apelido TEXT," +
-                "senha STRING" +
+                "senha TEXT" +
                 ")";
         String sql_char = "CREATE TABLE character(\n" +
                 "    id INTEGER PRIMARY KEY,\n" +
@@ -48,7 +49,7 @@ public class Repository extends SQLiteOpenHelper {
                 "    wisdom INTEGER not null,\n" +
                 "    charisma INTEGER not null,\n" +
                 "    id_fk INTEGER not null," +
-                "    FOREIGN KEY (id_fk) REFERENCES Usuario (id)" +
+                "    FOREIGN KEY (id_fk) REFERENCES usuario (id)" +
                 ")";
         String sql_bag = "CREATE TABLE bag(\n" +
                 "    id INTEGER PRIMARY KEY,\n" +
@@ -63,64 +64,38 @@ public class Repository extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        String sql_attUser = "DROP TABLE IF EXISTS usuario;";
         String sql_attChar = "DROP TABLE IF EXISTS character;";
         String sql_attBag = "DROP TABLE IF EXISTS bag;";
-        String sql_attuser = "DROP TABLE IF EXISTS Usuario;";
-        db.execSQL(sql_attuser);
+        db.execSQL(sql_attUser);
         db.execSQL(sql_attChar);
         db.execSQL(sql_attBag);
         onCreate(db);
     }
 
-    public void adicionarUsuario (Usuario user){
-
+    public void adicionarUsuario(Usuario user) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("apelido",user.getApelido());
-        contentValues.put("senha",user.getSenha());
-
-    };
-
-    public void adicionarPersonagem (Personagem personagem){
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("nome",personagem.getNome());
-        contentValues.put("classe",personagem.getClasse());
-        contentValues.put("raca",personagem.getRaca());
-
-    };
-
-    public void adicionarItem (Item item){
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("descricao", item.getDescricao() );
-
-
-    };
-
-    public void deletarUsuario (Usuario usuario){
-
-        String db = " delete from usuario  where id = " + usuario.getId();
-        getWritableDatabase().execSQL(db);
-        Log.i("usuario","sql delete " + db);
-
+        contentValues.put("apelido", user.getApelido());
+        contentValues.put("senha", user.getSenha());
+        getWritableDatabase().insert("usuario", null, contentValues);
     }
-    public void deletarPersonagem (Personagem personagem){
 
-        String db = " delete from personagem where id = " + personagem.getId();
-        getWritableDatabase().execSQL(db);
-        Log.i("personagem", "sql delete " + db);
-
+    public ArrayList<Usuario> getUsers(){
+        ArrayList<Usuario> list = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from usuario",null);
+        cursor.moveToFirst();
+        for(int i = 0; i < cursor.getCount(); i++){
+            Usuario usuario = new Usuario(cursor.getString(1),cursor.getString(2));
+            usuario.setId(cursor.getInt(0));
+            list.add(usuario);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
     }
-    public void deletarItem (Item item){
 
-        String db = " delete from item where id = " + item.getId();
-        getWritableDatabase().execSQL(db);
-        Log.i("Item", "sql delete " + db);
-
-
-    }
-  
-  public void addCharacter(Character a){
+    public void addCharacter(Character a, int id) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", a.getName());
         contentValues.put("CLASS", a.getCLASS());
@@ -134,17 +109,14 @@ public class Repository extends SQLiteOpenHelper {
         contentValues.put("intelligence", a.getIntelligence());
         contentValues.put("wisdom", a.getWisdom());
         contentValues.put("charisma", a.getCharisma());
-        getWritableDatabase().insert("character",null,contentValues);
+        contentValues.put("id_fk", id);
+        getWritableDatabase().insert("character", null, contentValues);
     }
 
-    public void addItems(String item, int id){
+    public void addItems(String item, int id) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("item", item);
-        contentValues.put("id_fk",id);
-        getWritableDatabase().insert("bag",null,contentValues);
+        contentValues.put("id_fk", id);
+        getWritableDatabase().insert("bag", null, contentValues);
     }
-
-
-
-
 }
