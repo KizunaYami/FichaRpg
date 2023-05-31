@@ -11,14 +11,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
+    Repository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+
+        repository = new Repository(this);
     }
 
-    ArrayList<Usuario> users = new ArrayList<Usuario>();
 
     public void CadastrarUsuario(View view) {
 
@@ -46,13 +48,10 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         }
 
         else{
-
-            users.add((new Usuario(apelido, senha)));
+            repository.adicionarUsuario(new Usuario(apelido,senha));
             Toast.makeText(this, "Usuario cadastrado", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent();
-            intent.putExtra("CadastroActivity", users);
-            setResult(RESULT_OK, intent);
+            finish();
 
         }
 

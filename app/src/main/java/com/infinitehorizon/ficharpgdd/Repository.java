@@ -28,7 +28,12 @@ public class Repository extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-      String sql_char = "CREATE TABLE character(\n" +
+        String sql_user = "CREATE TABLE Usuario(" +
+                "id INTEGER PRIMARY KEY," +
+                "apelido TEXT," +
+                "senha STRING" +
+                ")";
+        String sql_char = "CREATE TABLE character(\n" +
                 "    id INTEGER PRIMARY KEY,\n" +
                 "    name text not null,\n" +
                 "    CLASS text not null,\n" +
@@ -41,7 +46,9 @@ public class Repository extends SQLiteOpenHelper {
                 "    constitution INTEGER not null,\n" +
                 "    intelligence INTEGER not null,\n" +
                 "    wisdom INTEGER not null,\n" +
-                "    charisma INTEGER not null\n" +
+                "    charisma INTEGER not null,\n" +
+                "    id_fk INTEGER not null," +
+                "    FOREIGN KEY (id_fk) REFERENCES Usuario (id)" +
                 ")";
         String sql_bag = "CREATE TABLE bag(\n" +
                 "    id INTEGER PRIMARY KEY,\n" +
@@ -49,31 +56,20 @@ public class Repository extends SQLiteOpenHelper {
                 "    id_fk INTEGER NOT NULL,\n" +
                 "    FOREIGN KEY (id_fk) REFERENCES character (id)\n" +
                 ")";
-        sqLiteDatabase.execSQL(sql_char);
-        sqLiteDatabase.execSQL(sql_bag);
-
-        db.execSQL ("CREATE TABLE Usuario ( id INTEGER PRIMARY KEY, apelido TEXT, senha STRING )");
-
-        db.execSQL("CREATE TABLE Personagem ( id INTEGER PRIMARY KEY, nome TEXT, classe TEXT, raca TEXT )");
-
-        db.execSQL("CREATE TABLE Itens ( id INTEGER PRIMARY KEY, descricao TEXT )");
-
-
-        Log.i("Usuario","sql criação tabela usuario" + db);
-        Log.i("Personagem","sql criação tabela Personagem" + db);
-        Log.i("Itens","sql criação tabela Itens" + db);
-
-
+        db.execSQL(sql_user);
+        db.execSQL(sql_char);
+        db.execSQL(sql_bag);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String sql_attChar = "DROP TABLE IF EXISTS character;";
         String sql_attBag = "DROP TABLE IF EXISTS bag;";
-        sqLiteDatabase.execSQL(sql_attChar);
-        sqLiteDatabase.execSQL(sql_attBag);
-        onCreate(sqLiteDatabase);
-
+        String sql_attuser = "DROP TABLE IF EXISTS Usuario;";
+        db.execSQL(sql_attuser);
+        db.execSQL(sql_attChar);
+        db.execSQL(sql_attBag);
+        onCreate(db);
     }
 
     public void adicionarUsuario (Usuario user){

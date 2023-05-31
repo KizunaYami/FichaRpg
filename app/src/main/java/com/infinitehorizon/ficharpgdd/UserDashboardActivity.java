@@ -20,7 +20,7 @@ public class UserDashboardActivity extends AppCompatActivity {
     }
 
     public void onClickCadastro(View view) {
-        Intent intent = new Intent(this, CreateCharacterActivity.class);
+        Intent intent = new Intent(this, CadastroPersonagemActivity.class);
         startActivity(intent);
     }
 }
