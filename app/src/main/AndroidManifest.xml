@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoRPG"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".BagActivity"
+            android:exported="false" />
         <activity
             android:name=".CadastroPersonagemActivity"
             android:exported="false" />
@@ -26,7 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

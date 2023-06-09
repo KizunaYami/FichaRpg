@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 if(usuario.getApelido().equals(apelido) && usuario.getSenha().equals(senha)){
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("id",usuario.getId());
+                    bundle.putSerializable("user",usuario.getApelido());
                     Intent intent = new Intent(this, UserDashboardActivity.class);
                     intent.putExtras(bundle);
                     startActivity(intent);

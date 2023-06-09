@@ -39,6 +39,8 @@ public class CadastroPersonagemActivity extends AppCompatActivity {
         }else{
             repository.addCharacter(new Character(nomePersonagem, classePersonagem, racaPersonagem), id);
             Toast.makeText(this, "Personagem cadastrado", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            setResult(1,intent);
             finish();
         }
     }
