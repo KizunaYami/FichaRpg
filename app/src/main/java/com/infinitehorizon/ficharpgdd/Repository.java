@@ -73,6 +73,46 @@ public class Repository extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void adicionarUsuario(Usuario user) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("apelido", user.getApelido());
+        contentValues.put("senha", user.getSenha());
+        getWritableDatabase().insert("usuario", null, contentValues);
+    }
+
+    public ArrayList<Usuario> getUsers(){
+        ArrayList<Usuario> list = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from usuario",null);
+        cursor.moveToFirst();
+        for(int i = 0; i < cursor.getCount(); i++){
+            Usuario usuario = new Usuario(cursor.getString(1),cursor.getString(2));
+            usuario.setId(cursor.getInt(0));
+            list.add(usuario);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
+    public void addCharacter(Character a, int id) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", a.getName());
+        contentValues.put("CLASS", a.getCLASS());
+        contentValues.put("race", a.getRace());
+        contentValues.put("lvl", a.getLvl());
+        contentValues.put("life", a.getLife());
+        contentValues.put("armor", a.getArmor());
+        contentValues.put("strength", a.getStrength());
+        contentValues.put("dexterity", a.getDexterity());
+        contentValues.put("constitution", a.getConstitution());
+        contentValues.put("intelligence", a.getIntelligence());
+        contentValues.put("wisdom", a.getWisdom());
+        contentValues.put("charisma", a.getCharisma());
+        contentValues.put("id_fk", id);
+        getWritableDatabase().insert("character", null, contentValues);
+    }
+
     public void attAttributes(Character character){
         String sql = "UPDATE `character` SET `lvl`='"+character.getLvl()+"'," +
                 "`life`='"+character.getLife()+"'," +
@@ -87,20 +127,15 @@ public class Repository extends SQLiteOpenHelper {
         getWritableDatabase().execSQL(sql);
     }
 
-    public void deleteChar(Character character){
-        String sql = "delete from character where id="+character.getId();
-        getWritableDatabase().execSQL(sql);
-    }
-
-    public ArrayList<Usuario> getUsers(){
-        ArrayList<Usuario> list = new ArrayList<>();
+    public ArrayList<Character> getCharsList(int id){
+        ArrayList<Character> list = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from usuario",null);
+        Cursor cursor = db.rawQuery("select * from character where id_fk="+id,null);
         cursor.moveToFirst();
         for(int i = 0; i < cursor.getCount(); i++){
-            Usuario usuario = new Usuario(cursor.getString(1),cursor.getString(2));
-            usuario.setId(cursor.getInt(0));
-            list.add(usuario);
+            Character character = new Character(cursor.getString(1), cursor.getString(2), cursor.getString(3));
+            character.setId(cursor.getInt(0));
+            list.add(character);
             cursor.moveToNext();
         }
         cursor.close();
@@ -130,55 +165,35 @@ public class Repository extends SQLiteOpenHelper {
         return character;
     }
 
-    public ArrayList<Character> getCharsList(int id){
-        ArrayList<Character> list = new ArrayList<>();
+    public void deleteChar(Character character){
+        String sql = "delete from character where id="+character.getId();
+        getWritableDatabase().execSQL(sql);
+    }
+
+    public void addItem(Item item) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("item", item.getItem());
+        contentValues.put("id_fk", item.getId_fk());
+        getWritableDatabase().insert("bag", null, contentValues);
+    }
+
+    public ArrayList<Item> getItems(int id){
+        ArrayList<Item> list = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from character where id_fk="+id,null);
+        Cursor cursor = db.rawQuery("select * from bag where id_fk="+id,null);
         cursor.moveToFirst();
         for(int i = 0; i < cursor.getCount(); i++){
-            Character character = new Character(cursor.getString(1), cursor.getString(2), cursor.getString(3));
-            character.setId(cursor.getInt(0));
-            list.add(character);
+            Item item = new Item(cursor.getString(1), cursor.getInt(2));
+            item.setId(cursor.getInt(0));
+            list.add(item);
             cursor.moveToNext();
         }
         cursor.close();
         return list;
     }
 
-    public ArrayList<String> getItems(){
-        ArrayList<String> list = new ArrayList<>();
-        return list;
-    }
-
-    public void adicionarUsuario(Usuario user) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("apelido", user.getApelido());
-        contentValues.put("senha", user.getSenha());
-        getWritableDatabase().insert("usuario", null, contentValues);
-    }
-
-    public void addCharacter(Character a, int id) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", a.getName());
-        contentValues.put("CLASS", a.getCLASS());
-        contentValues.put("race", a.getRace());
-        contentValues.put("lvl", a.getLvl());
-        contentValues.put("life", a.getLife());
-        contentValues.put("armor", a.getArmor());
-        contentValues.put("strength", a.getStrength());
-        contentValues.put("dexterity", a.getDexterity());
-        contentValues.put("constitution", a.getConstitution());
-        contentValues.put("intelligence", a.getIntelligence());
-        contentValues.put("wisdom", a.getWisdom());
-        contentValues.put("charisma", a.getCharisma());
-        contentValues.put("id_fk", id);
-        getWritableDatabase().insert("character", null, contentValues);
-    }
-
-    public void addItems(String item, int id) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("item", item);
-        contentValues.put("id_fk", id);
-        getWritableDatabase().insert("bag", null, contentValues);
+    public void deleteItem(Item item){
+        String sql = "delete from bag where id="+item.getId();
+        getWritableDatabase().execSQL(sql);
     }
 }

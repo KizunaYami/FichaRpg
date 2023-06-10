@@ -45,9 +45,7 @@ public class UserDashboardActivity extends AppCompatActivity implements Characte
     public void onClick(Character character) {
         repository.deleteChar(character);
         Toast.makeText(this, "Deletado com sucesso", Toast.LENGTH_SHORT).show();
-        ListView listView = findViewById(R.id.idListViewChar);
-        CharacterAdapter characterAdapter = new CharacterAdapter(this,repository.getCharsList(id),this);
-        listView.setAdapter(characterAdapter);
+        recreate();
     }
 
     @Override

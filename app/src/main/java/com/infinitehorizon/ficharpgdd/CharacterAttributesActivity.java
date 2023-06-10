@@ -99,7 +99,10 @@ public class CharacterAttributesActivity extends AppCompatActivity {
     }
 
     public void onClickBag(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("id",id);
         Intent intent = new Intent(this, BagActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }
