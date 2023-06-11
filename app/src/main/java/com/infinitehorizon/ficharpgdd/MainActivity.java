@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     Repository repository;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         repository = new Repository(this);
+        navigationView = findViewById(R.id.idNav);
     }
 
     public void btCadastro(View view) {
@@ -47,5 +51,19 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Campos vazios", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void onClickMenu(View view) {
+        navigationView.setVisibility(View.VISIBLE);
+    }
+
+    public void onClickCloseLay(View view) {
+        navigationView.setVisibility(View.INVISIBLE);
+    }
+
+    public void onClickAbout(View view) {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+        navigationView.setVisibility(View.INVISIBLE);
     }
 }
