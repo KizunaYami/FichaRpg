@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickMenu"
+        android:backgroundTint="#050606"
         android:text="Menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -103,8 +104,9 @@
             android:layout_width="122dp"
             android:layout_height="42dp"
             android:layout_gravity="center"
-            android:onClick="btCadastro"
+            android:backgroundTint="#050606"
             android:color="@color/black"
+            android:onClick="btCadastro"
             android:text="Cadastrar"
             tools:layout_editor_absoluteX="237dp"
             tools:layout_editor_absoluteY="406dp" />
@@ -114,6 +116,7 @@
             android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="#050606"
             android:onClick="onClickBtLogin"
             android:text="Entrar"
             tools:layout_editor_absoluteX="151dp"
@@ -140,13 +143,13 @@
             <LinearLayout
                 android:layout_width="166dp"
                 android:layout_height="match_parent"
-                android:background="#0189C8"
+                android:background="#D8D7D5"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#003761"
+                    android:background="#050606"
                     android:orientation="vertical">
 
                     <ImageView
@@ -174,6 +177,7 @@
                     android:id="@+id/idBtAbout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="#050606"
                     android:onClick="onClickAbout"
                     android:text="About" />
 
