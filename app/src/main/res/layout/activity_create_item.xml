@@ -13,6 +13,7 @@
         android:layout_centerInParent="true"
         android:layout_margin="2dp"
         android:background="@drawable/edt_background"
+        android:backgroundTint="#E1DDDD"
         android:paddingLeft="10dp"
         android:ems="10"
         android:inputType="text"
@@ -29,6 +30,7 @@
         android:onClick="onClickSaveItem"
         android:text="Adicionar item"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="#050606"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
