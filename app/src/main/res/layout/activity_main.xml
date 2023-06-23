@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    style="@style/tela"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/idBtMenu"
+        style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Bt"
         android:onClick="onClickMenu"
         android:text="Menu"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,29 +43,28 @@
 
         <TextView
             android:id="@+id/txtApelido"
+            style="@style/texto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Apelido"
-            android:textColor="@color/txt"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="106dp"
             tools:layout_editor_absoluteY="117dp" />
 
         <EditText
             android:id="@+id/editTxtApelido"
+            style="@style/caixa"
             android:layout_width="242dp"
             android:layout_height="55dp"
             android:layout_centerInParent="true"
             android:layout_margin="2dp"
             android:background="@drawable/edt_background"
-            android:backgroundTint="@color/sla"
             android:drawableLeft="@drawable/baseline_person_outline_24"
             android:drawablePadding="10dp"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:textColor="@color/txt"
             app:layout_constraintTop_toBottomOf="@+id/txtApelido"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="106dp" />
@@ -76,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Senha"
-            android:textColor="@color/txt"
+            style="@style/texto"
             tools:layout_editor_absoluteX="110dp"
             tools:layout_editor_absoluteY="304dp" />
 
@@ -87,13 +86,12 @@
             android:layout_centerInParent="true"
             android:layout_margin="2dp"
             android:background="@drawable/edt_background"
-            android:backgroundTint="@color/sla"
+            style="@style/caixa"
             android:drawableLeft="@drawable/baseline_lock_24"
             android:drawablePadding="10dp"
             android:ems="10"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
-            android:textColor="@color/txt"
             app:layout_constraintTop_toBottomOf="@+id/txtSenha"
             tools:layout_editor_absoluteX="110dp" />
 
@@ -103,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Não possui uma conta?"
-            android:textColor="@color/txt"
+            style="@style/texto"
             tools:layout_editor_absoluteX="91dp"
             tools:layout_editor_absoluteY="419dp" />
 
@@ -112,8 +110,7 @@
             android:layout_width="122dp"
             android:layout_height="42dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/Bt"
-            android:color="@color/black"
+            style="@style/botao"
             android:onClick="btCadastro"
             android:text="Cadastrar"
             tools:layout_editor_absoluteX="237dp"
@@ -124,7 +121,7 @@
             android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/Bt"
+            style="@style/botao"
             android:onClick="onClickBtLogin"
             android:text="Entrar"
             tools:layout_editor_absoluteX="151dp"
@@ -135,7 +132,7 @@
         android:id="@+id/idNav"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#7EFFFFFF"
+        android:background="#36FFFFFF"
         android:onClick="onClickNav"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,38 +152,43 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    style="@style/tela"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@color/bg"
+                    android:layout_gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="128dp"
-                        android:layout_height="102dp"
+                        android:layout_width="134dp"
+                        android:layout_height="128dp"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/app_icon" />
 
                     <TextView
                         android:id="@+id/textView3"
+                        style="@style/texto"
                         android:layout_width="128dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="@string/app_name"
                         android:textAlignment="center"
-                        android:textColor="@color/txt"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <Switch
                     android:id="@+id/idSwitch"
+                    style="@style/texto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dark mode" />
 
                 <Button
                     android:id="@+id/idBtAbout"
-                    android:layout_width="match_parent"
+                    style="@style/botao"
+                    android:layout_width="137dp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/Bt"
+                    android:layout_gravity="center"
                     android:onClick="onClickAbout"
                     android:text="About" />
 

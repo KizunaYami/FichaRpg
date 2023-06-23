@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    style="@style/tela"
     tools:context=".CreateItemActivity">
 
     <EditText
         android:id="@+id/idEditTextNewItem"
+        style="@style/texto"
         android:layout_width="242dp"
         android:layout_height="55dp"
         android:layout_centerInParent="true"
@@ -17,7 +18,6 @@
         android:ems="10"
         android:inputType="text"
         android:paddingLeft="10dp"
-        android:textColor="@color/txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,9 +26,9 @@
 
     <Button
         android:id="@+id/idBtSaveItem"
+        style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Bt"
         android:onClick="onClickSaveItem"
         android:text="Adicionar item"
         app:layout_constraintBottom_toBottomOf="parent"

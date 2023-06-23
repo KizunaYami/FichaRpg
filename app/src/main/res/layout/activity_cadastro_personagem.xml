@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    style="@style/tela"
     tools:context=".CadastroPersonagemActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="153dp"
+        android:layout_height="145dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.100000024"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/char_icon" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nome"
-            android:textColor="@color/txt"
+            style="@style/texto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="229dp" />
@@ -46,11 +46,10 @@
             android:layout_centerInParent="true"
             android:layout_margin="2dp"
             android:background="@drawable/edt_background"
-            android:backgroundTint="@color/sla"
+            style="@style/caixa"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:textColor="@color/txt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="260dp" />
@@ -60,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Classe"
-            android:textColor="@color/txt"
+            style="@style/texto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="323dp" />
@@ -72,11 +71,10 @@
             android:layout_centerInParent="true"
             android:layout_margin="2dp"
             android:background="@drawable/edt_background"
-            android:backgroundTint="@color/sla"
+            style="@style/caixa"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:textColor="@color/txt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="359dp" />
@@ -86,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Raça"
-            android:textColor="@color/txt"
+            style="@style/texto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="424dp" />
@@ -98,11 +96,10 @@
             android:layout_centerInParent="true"
             android:layout_margin="2dp"
             android:background="@drawable/edt_background"
-            android:backgroundTint="@color/sla"
+            style="@style/caixa"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="10dp"
-            android:textColor="@color/txt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="462dp" />
@@ -113,7 +110,7 @@
         android:id="@+id/btCadastroPersonagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Bt"
+        style="@style/botao"
         android:onClick="cadastrarPersonagem"
         android:rotationY="8"
         android:text="Cadastrar"

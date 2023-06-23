@@ -5,18 +5,18 @@
 
     <TextView
         android:id="@+id/idTextViewItem"
+        style="@style/texto"
         android:layout_width="233dp"
         android:layout_height="35dp"
         android:layout_weight="1"
-        android:text="TextView"
-        android:textColor="@color/txt" />
+        android:text="TextView" />
 
     <Button
         android:id="@+id/idBtDelItem"
+        style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:layout_weight="1"
-        android:backgroundTint="@color/Bt"
         android:onClick="onClickDeleteItem"
         android:text="Deletar" />
 </LinearLayout>

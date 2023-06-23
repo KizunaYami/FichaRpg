@@ -2,8 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="Bt">#0F1212</color>
-    <color name="bg">#505050</color>
-    <color name="txt">#D7DFDF</color>
-    <color name="sla">#9A9E9E</color>
+
+    <color name="Btdark">#222222</color>
+    <color name="bgdark">#3E3E3E</color>
+    <color name="txtdark">#C1C1C1</color>
+    <color name="sladark">#515151</color>
+    <color name="bttxtdark">#FFFFFF</color>
+
+    <color name="Bt">#A282BA</color>
+    <color name="bg">#DBC4FF</color>
+    <color name="txt">#5B486A</color>
+    <color name="sla">#C39DE0</color>
+    <color name="bttxt">#271F2E</color>
 </resources>

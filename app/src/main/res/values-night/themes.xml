@@ -4,4 +4,20 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="tela">
+        <item name="android:background">@color/bgdark</item>
+    </style>
+    <style name="texto">
+        <item name="android:textColor">@color/txtdark</item>
+    </style>
+    <style name="botao">
+        <item name="android:backgroundTint">@color/Btdark</item>
+        <item name="android:textColor">@color/bttxtdark</item>
+    </style>
+    <style name="caixa">
+        <item name="android:backgroundTint">@color/sladark</item>
+        <item name="android:textColor">@color/txtdark</item>
+    </style>
+
 </resources>

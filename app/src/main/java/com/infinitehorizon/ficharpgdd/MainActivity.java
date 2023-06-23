@@ -1,11 +1,16 @@
 package com.infinitehorizon.ficharpgdd;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -15,6 +20,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     Repository repository;
     NavigationView navigationView;
+    Switch sw;
+    boolean darkmode;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +32,31 @@ public class MainActivity extends AppCompatActivity {
 
         repository = new Repository(this);
         navigationView = findViewById(R.id.idNav);
+
+        sw = findViewById(R.id.idSwitch);
+        sharedPreferences = getSharedPreferences("mode", Context.MODE_PRIVATE);
+        darkmode = sharedPreferences.getBoolean("dark",false);
+
+        if(darkmode){
+            sw.setChecked(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+
+        sw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(darkmode){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    editor = sharedPreferences.edit();
+                    editor.putBoolean("dark",false);
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    editor = sharedPreferences.edit();
+                    editor.putBoolean("dark",true);
+                }
+                editor.apply();
+            }
+        });
     }
 
     public void btCadastro(View view) {

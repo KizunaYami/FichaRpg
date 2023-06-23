@@ -5,5 +5,20 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="tela">
+        <item name="android:background">@color/bg</item>
+    </style>
+    <style name="texto">
+        <item name="android:textColor">@color/txt</item>
+    </style>
+    <style name="botao">
+        <item name="android:backgroundTint">@color/Bt</item>
+        <item name="android:textColor">@color/bttxt</item>
+    </style>
+    <style name="caixa">
+        <item name="android:backgroundTint">@color/sla</item>
+        <item name="android:textColor">@color/txt</item>
+    </style>
+
     <style name="Theme.ProjetoRPG" parent="Base.Theme.ProjetoRPG" />
 </resources>

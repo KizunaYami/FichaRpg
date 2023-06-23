@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    style="@style/tela"
     tools:context=".CharacterAttributesActivity">
 
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="382dp"
+        android:layout_width="350dp"
         android:layout_height="58dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,21 +27,21 @@
 
             <TextView
                 android:id="@+id/textView14"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Intelligence"
-                android:textColor="@color/txt" />
+                android:text="Intelligence" />
 
             <EditText
                 android:id="@+id/idTxtInte"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
 
@@ -52,21 +52,21 @@
 
             <TextView
                 android:id="@+id/textView16"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Wisdom"
-                android:textColor="@color/txt" />
+                android:text="Wisdom" />
 
             <EditText
                 android:id="@+id/idTxtWis"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
 
@@ -77,28 +77,28 @@
 
             <TextView
                 android:id="@+id/textView18"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Charisma"
-                android:textColor="@color/txt" />
+                android:text="Charisma" />
 
             <EditText
                 android:id="@+id/idTxtChari"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="382dp"
+        android:layout_width="350dp"
         android:layout_height="58dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,21 +115,21 @@
 
             <TextView
                 android:id="@+id/textView14"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Strength"
-                android:textColor="@color/txt" />
+                android:text="Strength" />
 
             <EditText
                 android:id="@+id/idTxtStr"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
 
@@ -140,21 +140,21 @@
 
             <TextView
                 android:id="@+id/textView16"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Dexterity"
-                android:textColor="@color/txt" />
+                android:text="Dexterity" />
 
             <EditText
                 android:id="@+id/idTxtDex"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
 
@@ -165,29 +165,29 @@
 
             <TextView
                 android:id="@+id/textView18"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Constitution"
-                android:textColor="@color/txt" />
+                android:text="Constitution" />
 
             <EditText
                 android:id="@+id/idTxtCons"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/imageLayout"
-        android:layout_width="194dp"
-        android:layout_height="175dp"
+        android:layout_width="140dp"
+        android:layout_height="143dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,16 +197,18 @@
         app:layout_constraintVertical_bias="0.050000012">
 
         <ImageView
-            android:id="@+id/imageLayout"
+            android:id="@+id/imageView4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/char_icon" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/nameLayout"
-        android:layout_width="54dp"
-        android:layout_height="175dp"
+        android:layout_width="50dp"
+        android:layout_height="143dp"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -217,30 +219,31 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name: "
-            android:textColor="@color/txt" />
+            android:text="Name: " />
 
         <TextView
             android:id="@+id/textView2"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Class:"
-            android:textColor="@color/txt" />
+            android:text="Class:" />
 
         <TextView
             android:id="@+id/textView3"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Race: "
-            android:textColor="@color/txt" />
+            android:text="Race: " />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/resultNameLayout"
         android:layout_width="100dp"
-        android:layout_height="176dp"
+        android:layout_height="143dp"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -251,29 +254,29 @@
 
         <TextView
             android:id="@+id/idTxtName"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/txt" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/idTxtClass"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/txt" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/idTxtRace"
+            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/txt" />
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="382dp"
+        android:layout_width="350dp"
         android:layout_height="58dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -289,21 +292,21 @@
 
             <TextView
                 android:id="@+id/textView14"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Level"
-                android:textColor="@color/txt" />
+                android:text="Level" />
 
             <EditText
                 android:id="@+id/idTxtLvl"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
 
@@ -314,21 +317,21 @@
 
             <TextView
                 android:id="@+id/textView16"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Life"
-                android:textColor="@color/txt" />
+                android:text="Life" />
 
             <EditText
                 android:id="@+id/idTxtLife"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
 
@@ -339,30 +342,30 @@
 
             <TextView
                 android:id="@+id/textView18"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Armor"
-                android:textColor="@color/txt" />
+                android:text="Armor" />
 
             <EditText
                 android:id="@+id/idEditTxtArmor"
+                style="@style/texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name"
-                android:textColor="@color/txt" />
+                android:text="Name" />
 
         </LinearLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/idBtAtt"
+        style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Bt"
         android:onClick="onClickAtt"
         android:text="Atualizar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -374,9 +377,9 @@
 
     <Button
         android:id="@+id/idBtBag"
+        style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Bt"
         android:onClick="onClickBag"
         android:text="Bolsa de itens"
         app:layout_constraintBottom_toBottomOf="parent"
