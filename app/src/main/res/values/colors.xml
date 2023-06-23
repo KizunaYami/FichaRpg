@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Bt">#0F1212</color>
+    <color name="bg">#505050</color>
+    <color name="txt">#D7DFDF</color>
+    <color name="sla">#9A9E9E</color>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".UserDashboardActivity">
 
     <ImageView
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bem vindo"
+        android:textColor="@color/txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.58"
@@ -34,6 +36,7 @@
         android:id="@+id/idTextViewWelUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.77"
@@ -55,10 +58,10 @@
         android:id="@+id/idBtDashCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Bt"
         android:onClick="onClickCadastro"
         android:text="Cadastrar Personagem"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:backgroundTint="#050606"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

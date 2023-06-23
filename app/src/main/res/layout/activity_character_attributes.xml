@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".CharacterAttributesActivity">
 
 
@@ -29,7 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Intelligence" />
+                android:text="Intelligence"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtInte"
@@ -38,7 +40,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
 
@@ -52,7 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Wisdom" />
+                android:text="Wisdom"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtWis"
@@ -61,7 +65,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
 
@@ -75,7 +80,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Charisma" />
+                android:text="Charisma"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtChari"
@@ -84,7 +90,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
     </LinearLayout>
@@ -111,7 +118,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Strength" />
+                android:text="Strength"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtStr"
@@ -120,7 +128,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
 
@@ -134,7 +143,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Dexterity" />
+                android:text="Dexterity"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtDex"
@@ -143,7 +153,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
 
@@ -157,7 +168,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Constitution" />
+                android:text="Constitution"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtCons"
@@ -166,7 +178,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
     </LinearLayout>
@@ -206,19 +219,22 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name: " />
+            android:text="Name: "
+            android:textColor="@color/txt" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Class:" />
+            android:text="Class:"
+            android:textColor="@color/txt" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Race: " />
+            android:text="Race: "
+            android:textColor="@color/txt" />
     </LinearLayout>
 
     <LinearLayout
@@ -237,19 +253,22 @@
             android:id="@+id/idTxtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="@color/txt" />
 
         <TextView
             android:id="@+id/idTxtClass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="@color/txt" />
 
         <TextView
             android:id="@+id/idTxtRace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="@color/txt" />
     </LinearLayout>
 
     <LinearLayout
@@ -273,7 +292,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Level" />
+                android:text="Level"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtLvl"
@@ -282,7 +302,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
 
@@ -296,7 +317,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Life" />
+                android:text="Life"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idTxtLife"
@@ -305,7 +327,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
 
@@ -319,7 +342,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Armor" />
+                android:text="Armor"
+                android:textColor="@color/txt" />
 
             <EditText
                 android:id="@+id/idEditTxtArmor"
@@ -328,7 +352,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/txt" />
 
         </LinearLayout>
     </LinearLayout>
@@ -337,10 +362,10 @@
         android:id="@+id/idBtAtt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Bt"
+        android:onClick="onClickAtt"
         android:text="Atualizar"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:onClick="onClickAtt"
-        android:backgroundTint="#050606"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -351,10 +376,10 @@
         android:id="@+id/idBtBag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/Bt"
+        android:onClick="onClickBag"
         android:text="Bolsa de itens"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:onClick="onClickBag"
-        android:backgroundTint="#050606"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
