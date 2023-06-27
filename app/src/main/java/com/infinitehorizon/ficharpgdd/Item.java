@@ -14,14 +14,6 @@ public class Item{
         this.id = id;
     }
 
-    public void setItem(String item) {
-        this.item = item;
-    }
-
-    public void setId_fk(int id_fk) {
-        this.id_fk = id_fk;
-    }
-
     public int getId() {
         return id;
     }

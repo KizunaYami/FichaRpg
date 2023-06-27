@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class CadastroPersonagemActivity extends AppCompatActivity {
     Repository repository;
     int id;
@@ -30,18 +28,15 @@ public class CadastroPersonagemActivity extends AppCompatActivity {
         String nomePersonagem = cadastrarNomePersonagem.getText().toString();
         String classePersonagem = cadastrarClassePersonagem.getText().toString();
         String racaPersonagem = confirmacaoRacaPersonagem.getText().toString();
-        String error = "";
 
-        if(nomePersonagem.equals("") || classePersonagem.equals("") || racaPersonagem.equals("")){
-            error = error + "Campos vazios";
-        }else if( error != "") {
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-        }else{
+        if(!nomePersonagem.equals("") && !classePersonagem.equals("") && !racaPersonagem.equals("")){
             repository.addCharacter(new Character(nomePersonagem, classePersonagem, racaPersonagem), id);
             Toast.makeText(this, "Personagem cadastrado", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent();
             setResult(1,intent);
             finish();
+        }else{
+            Toast.makeText(this, "Campos vazios", Toast.LENGTH_SHORT).show();
         }
     }
 }

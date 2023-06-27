@@ -23,7 +23,6 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         this.onClickListener = onClickListener;
     }
 
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

@@ -125,6 +125,7 @@ public class Repository extends SQLiteOpenHelper {
                 "`charisma`='"+character.getCharisma()+"'" +
                 "WHERE id="+character.getId();
         getWritableDatabase().execSQL(sql);
+
     }
 
     public ArrayList<Character> getCharsList(int id){

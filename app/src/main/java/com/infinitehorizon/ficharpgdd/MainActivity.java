@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -37,6 +36,58 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("mode", Context.MODE_PRIVATE);
         darkmode = sharedPreferences.getBoolean("dark",false);
 
+        onSwitch();
+    }
+
+    public void btCadastro(View view) {
+        Intent intent = new Intent(this, CadastroUsuarioActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickBtLogin(View view) {
+        EditText editApelido = findViewById(R.id.editTxtApelido);
+        EditText editSenha = findViewById(R.id.editTxtSenha);
+        String apelido = editApelido.getText().toString();
+        String senha = editSenha.getText().toString();
+        ArrayList<Usuario> list = repository.getUsers();
+
+        if(!apelido.equals("") && !senha.equals("")){
+            boolean userOk = false;
+            for(Usuario usuario: list){
+                if(usuario.getApelido().equals(apelido) && usuario.getSenha().equals(senha)){
+                    userOk = true;
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("id",usuario.getId());
+                    bundle.putSerializable("user",usuario.getApelido());
+                    Intent intent = new Intent(this, UserDashboardActivity.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    break;
+                }
+            }
+            if(userOk == false){
+                Toast.makeText(this, "Usuario ou senha incorretos", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(this, "Campos vazios", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onClickMenu(View view) {
+        navigationView.setVisibility(View.VISIBLE);
+    }
+
+    public void onClickCloseLay(View view) {
+        navigationView.setVisibility(View.INVISIBLE);
+    }
+
+    public void onClickAbout(View view) {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+        navigationView.setVisibility(View.INVISIBLE);
+    }
+
+    public void onSwitch(){
         if(darkmode){
             sw.setChecked(true);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -57,47 +108,5 @@ public class MainActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
-    }
-
-    public void btCadastro(View view) {
-        Intent intent = new Intent(this, CadastroUsuarioActivity.class);
-        startActivity(intent);
-    }
-
-    public void onClickBtLogin(View view) {
-        EditText editApelido = findViewById(R.id.editTxtApelido);
-        EditText editSenha = findViewById(R.id.editTxtSenha);
-        String apelido = editApelido.getText().toString();
-        String senha = editSenha.getText().toString();
-        ArrayList<Usuario> list = repository.getUsers();
-
-        if(!apelido.equals("") && !senha.equals("")){
-            for(Usuario usuario: list){
-                if(usuario.getApelido().equals(apelido) && usuario.getSenha().equals(senha)){
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("id",usuario.getId());
-                    bundle.putSerializable("user",usuario.getApelido());
-                    Intent intent = new Intent(this, UserDashboardActivity.class);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }
-            }
-        }else{
-            Toast.makeText(this, "Campos vazios", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void onClickMenu(View view) {
-        navigationView.setVisibility(View.VISIBLE);
-    }
-
-    public void onClickCloseLay(View view) {
-        navigationView.setVisibility(View.INVISIBLE);
-    }
-
-    public void onClickAbout(View view) {
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-        navigationView.setVisibility(View.INVISIBLE);
     }
 }

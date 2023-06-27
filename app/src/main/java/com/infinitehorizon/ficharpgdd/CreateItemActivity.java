@@ -23,11 +23,17 @@ public class CreateItemActivity extends AppCompatActivity {
 
     public void onClickSaveItem(View view) {
         EditText editText = findViewById(R.id.idEditTextNewItem);
-        Item item = new Item(editText.getText().toString(),id);
-        repository.addItem(item);
-        Toast.makeText(this, "Item salvo", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent();
-        setResult(1,intent);
-        finish();
+        String newiItem = editText.getText().toString();
+        
+        if(!newiItem.equals("")){
+            Item item = new Item(newiItem,id);
+            repository.addItem(item);
+            Toast.makeText(this, "Item salvo", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            setResult(1,intent);
+            finish();
+        }else{
+            Toast.makeText(this, "Digite o nome de um item", Toast.LENGTH_SHORT).show();
+        }
     }
 }

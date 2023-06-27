@@ -16,14 +16,6 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    public void setApelido(String apelido) {
-        this.apelido = apelido;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public Integer getId() {
         return id;
     }

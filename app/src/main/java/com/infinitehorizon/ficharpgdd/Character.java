@@ -126,8 +126,4 @@ public class Character {
     public int getCharisma() {
         return charisma;
     }
-
-    public int getId_fk() {
-        return id_fk;
-    }
 }
