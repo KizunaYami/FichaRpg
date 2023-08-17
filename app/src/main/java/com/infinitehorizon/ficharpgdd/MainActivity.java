@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     boolean darkmode;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-
+//Dienifer esteve aqui
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
